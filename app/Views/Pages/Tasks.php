@@ -1,4 +1,4 @@
-<div class="Tasks">
+<div >
 <?php
 echo("<ul>");
 foreach(SortPrio(GetTodos())as $todo){
@@ -9,6 +9,7 @@ if($todo['priority']==true){
         echo("<span class='prio'>пріоритет </span>");
 }
 echo("<span>".$todo['created-at']."</span>");
+echo("</li>");
 }
 echo("</ul>");
 }

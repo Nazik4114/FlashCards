@@ -1,4 +1,4 @@
-<div class="Tasks">
+<div>
 <?php
 echo("<ul>");
 foreach(GetTodos()as $todo){
