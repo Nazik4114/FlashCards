@@ -1,61 +1,55 @@
-.Form{
-margin: auto;
-padding-left: 10%;
-padding-right: 10%;
-padding-top: 2%;
-padding-bottom: 2%;
-margin-left: 10%;
-margin-right:10% ;
-background: #FFF2CD;
-border: 1px black solid;
-
+.Start{
+margin-top: 2%;
+margin-left: 30%;
+margin-right: 30%;
+text-align: center;
+font-family: cursive;
 }
-.HR{
-    border: 2px #C16300 solid;
-    ;
+h2{
+    font-weight: 900;
 }
-#v{
-
-    height: 100%;
-    border-right:1px black dashed;
-    padding: 0%;
+.True{
+    color: green;
+    font-weight: 800;
+    font-size: 130%;
 }
-.CountT{
-    color:#DCD3DF;
-    font-weight: 500;
+.False{
+    color: red;
+    text-decoration: line-through;
+    font-weight: 800;
+    font-size: 130%;
 }
-.Task{
-
-    margin-left:3% ;
-    margin-right:3%;
+.Control{
+    color:#5C13AA;
+    font-weight: 800;
+    font-size: 130%;
 }
-.prio{
-
-    color: #C22271;
-    background: pink;
-    font-weight: 500;
+.Ramka{
+        margin-top: 2%;
+        margin-left: 30%;
+        margin-right: 30%;
+        text-align: center;
+        font-family: cursive;
+        border: 1px;
+        border-color:  black;
+        border-style: dashed;
+        padding: 30px;
+}
+.Word{
+    border: 1px, black,solid;
+    background-color:#FFF2CD ;
+    margin-left: 30%;
+    margin-right: 30%;
+}
+.en{
+    color: red;
+    font-weight: 900;
+    font-size: 150%;
 }
 .btn{
-    border: none;
-    font-size: 150%;
-    color:#E68524;
-    font-weight: 600;
+    background-color: #D4E9D4;
+    border: 2px,green,solid;
 }
-.btnForm{
-    background: #FE8000;
-    color: #FFFFF8;
-    border: none;
-    font-size: 120%;
-    font-weight: 800;
-    padding: 5%;
-    border-radius: 8%;
-}
-.lbForm{
-    font-size: 120%;
-}
-.btndel{
-    border: none;
-    font-size: 130%;
-    color:red;
-    font-weight: 600;
+li{
+    color: red;
 }
