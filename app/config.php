@@ -3,6 +3,8 @@ define('CONTROLLERS_PATH', __DIR__."/controllers");
 define('VIEWS_PATH', __DIR__."/Views");
 define('BASE_URL', "http://localhost:8181");
 define('JS_PATH', "http://localhost:8181/JS/");
+define('SESSION_STORAGE_PATH', __DIR__."/storage/sessions");
+define('JSON_FILE',__DIR__."/json");
 $routesMap = [
     'home' => 'HomeController@Home',
     'remember'=>'RememberController@Remember',

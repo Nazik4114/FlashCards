@@ -12,7 +12,6 @@ function Test(){
         SetWordsToSessionAudit($Word);
              $page="Page3";
        }else{
-        //dd(true,$_SESSION);
          header('Location:/?action=audit');
        }
              require_once VIEWS_PATH."/master.php";
