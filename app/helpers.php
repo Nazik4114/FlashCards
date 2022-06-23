@@ -33,7 +33,7 @@ function dd($flag = true, ...$arguments) {
         return [new $controlerClass, $method];
     }
 } 
- function GetWords(){
+ function getWords(){
     if(file_exists(JSON_FILE."/words.json")){
         $Words=json_decode(file_get_contents(JSON_FILE."/words.json"),true); 
         return $Words;
@@ -41,7 +41,7 @@ function dd($flag = true, ...$arguments) {
        return [];
     }
  }
- function SetWordsToSession($Words,$Count){
+ function setWordsToSession($Words,$Count){
         for ($i=0; $i <$Count ; $i++) { 
             $_SESSION['AnShow'][]=[
                 'en'=>$Words[$i]['en'],
@@ -49,25 +49,25 @@ function dd($flag = true, ...$arguments) {
             ];
         }
  }
- function SetWordsToSessionShows($Word){
+ function setWordsToSessionShows($Word){
         $_SESSION['Show'][]=[
             'en'=>$Word['en'],
             'ua'=>$Word['ua'],
         ];
     
  }
- function SetWordsToSessionAudit($Word){
+ function setWordsToSessionAudit($Word){
     $_SESSION['Audit'][]=[
         'en'=>$Word['en'],
         'ua'=>$Word['ua'],
     ];
 }
-function SetAnswerToSession($WordEn){
+function setAnswerToSession($WordEn){
     $_SESSION['Answer'][]=[
         'en'=>$WordEn,
     ];
 }
-function Audit($Word,$w){
+function audit($Word,$w){
 
     if(strcasecmp($Word['en'],$w)==0){
         return "True";
@@ -76,7 +76,9 @@ function Audit($Word,$w){
     }
 
 }
-function Audit1(){
+/**
+ */
+function audit1(){
 $C=0;
     for ($i=0; $i < count($_SESSION['Audit']); $i++){
     if(strcasecmp($_SESSION['Audit'][$i]['en'],$_SESSION['Answer'][$i]['en'])==0){
