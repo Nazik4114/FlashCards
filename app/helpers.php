@@ -1,4 +1,11 @@
 <?php
+/**
+ * Dump and die
+ *
+ * @param boolean $flag
+ * @param array $arguments
+ * @return void
+ */
 function dd($flag = true, ...$arguments) {
 
     if (count($arguments)) {
@@ -18,6 +25,13 @@ function dd($flag = true, ...$arguments) {
     }
     
     }
+    /**
+     * This method building  controller path and returned class name and method
+     *
+     * @param array $routes
+     * @param string $action
+     * @return array
+     */
  function getRouteHandler(array $routes, $action) {
     if (array_key_exists($action, $routes)) {
 
@@ -33,6 +47,11 @@ function dd($flag = true, ...$arguments) {
         return [new $controlerClass, $method];
     }
 } 
+/**
+ * Returns array words
+ *
+ * @return array
+ */
  function getWords(){
     if(file_exists(JSON_FILE."/words.json")){
         $Words=json_decode(file_get_contents(JSON_FILE."/words.json"),true); 
@@ -41,35 +60,67 @@ function dd($flag = true, ...$arguments) {
        return [];
     }
  }
- function setWordsToSession($Words,$Count){
-        for ($i=0; $i <$Count ; $i++) { 
+ /**
+  *Adds words to super global array $_SESSION['AnShow']
+  *
+  * @param array $words
+  * @param int $count
+  * @return void
+  */
+ function setWordsToSession($words,$count){
+        for ($i=0; $i <$count ; $i++) { 
             $_SESSION['AnShow'][]=[
-                'en'=>$Words[$i]['en'],
-                'ua'=>$Words[$i]['ua'],
+                'en'=>$words[$i]['en'],
+                'ua'=>$words[$i]['ua'],
             ];
         }
  }
- function setWordsToSessionShows($Word){
+ /**
+  * Adds word to super global array $_SESSION['Show']
+  *
+  * @param array $word
+  * @return void
+  */
+ function setWordsToSessionShows($word){
         $_SESSION['Show'][]=[
-            'en'=>$Word['en'],
-            'ua'=>$Word['ua'],
+            'en'=>$word['en'],
+            'ua'=>$word['ua'],
         ];
     
  }
- function setWordsToSessionAudit($Word){
+  /**
+  * Adds word to super global array $_SESSION['Audit']
+  *
+  * @param array $word
+  * @return void
+  */
+ function setWordsToSessionAudit($word){
     $_SESSION['Audit'][]=[
-        'en'=>$Word['en'],
-        'ua'=>$Word['ua'],
+        'en'=>$word['en'],
+        'ua'=>$word['ua'],
     ];
 }
-function setAnswerToSession($WordEn){
+/**
+ * Adds word to super global array $_SESSION['Audit']
+ *
+ * @param array $wordEn
+ * @return void
+ */
+function setAnswerToSession($wordEn){
     $_SESSION['Answer'][]=[
-        'en'=>$WordEn,
+        'en'=>$wordEn,
     ];
 }
-function audit($Word,$w){
+/**
+ * compares to word1 and word2
+ *
+ * @param array $word
+ * @param string $w
+ * @return string
+ */
+function audit($word,$w){
 
-    if(strcasecmp($Word['en'],$w)==0){
+    if(strcasecmp($word['en'],$w)==0){
         return "True";
     }else{
         return "False";
@@ -77,13 +128,16 @@ function audit($Word,$w){
 
 }
 /**
+ * Checks how many words are correct
+ *
+ * @return int
  */
 function audit1(){
-$C=0;
+$c=0;
     for ($i=0; $i < count($_SESSION['Audit']); $i++){
     if(strcasecmp($_SESSION['Audit'][$i]['en'],$_SESSION['Answer'][$i]['en'])==0){
-       $C++;
+       $c++;
     }
 }
-    return $C;
+    return $c;
 }
